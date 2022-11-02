@@ -1,0 +1,38 @@
+{%extends 'main.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+
+<body>
+  {%block content%}
+  <style>
+    .home-container{
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+    }
+  </style>
+  <div class="home-container">
+      <div>
+       {%include 'base/topics_component.html'%}
+      </div>
+      <div>
+          <h1><a href={% url 'create_form' %}>create room</a></h1>
+          <h3>{{room_count}} number of rooms</h3>
+          <hr>
+          <div>
+            {%include 'base/cr_room_component.html'%}
+          </div>
+      </div>
+      <div>
+       {%include 'base/feeds_component.html'%}
+      </div>
+  </div>  
+
+  {%endblock content%}
+</body>
+</html>

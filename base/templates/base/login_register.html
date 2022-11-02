@@ -1,0 +1,46 @@
+
+{%extends 'main.html'%}
+
+{%block content%}
+
+{%if page == 'loginpage'%}
+<div>
+    <form method="POST" action="">
+        {%csrf_token%}
+        <span>USER NAME:</span>
+        <input type="text" name="username"/>
+        <span>PASSWORD:</span>
+        <input type="password" name="password"/>
+        <input type="submit" name='submit'/>
+        <h3>yet to sing in?</h3>
+        <a href="register">Sign Up</a></br></br>   
+    </form>
+</div>
+{%else%}
+<div>
+    <form method="POST" action="">
+        {%csrf_token%}
+        <span>First Name:</span>
+        <input type="text" name="first_name"/></br></br>
+        <span>Last Name:</span>
+        <input type="text" name="last_name"/></br></br>
+        <span>Mail:</span>
+        <input type="mail" name="mail"/></br></br>
+        <span>User Name:</span>
+        <input type="text" name="user_name"/></br></br>
+        <span>Password:</span>
+        <input type="password" name="password1"/></br></br>
+        <span>Confirm Password:</span>
+        <input type="password" name="password2"/></br></br>
+        <input type="submit" name='register'/></br></br>  
+        <h3>already logged in?</h3>
+        <a href="loginpage">Sign In</a>
+    </form>
+</div>
+{%endif%}
+{%if messages%}
+    {%for i in messages%}
+    {{i}}
+    {%endfor%}
+{%endif%} 
+{%endblock content%}
