@@ -18,7 +18,7 @@
               </a>
               <h3>Study Room</h3>
             </div>
-            {%if room.host == request.user%}
+<!-- {%if room.host == request.user%} -->
             <div class="room__topRight">
               <a href="{% url 'update_form' room.id%}">
                 <svg
@@ -54,7 +54,7 @@
                 </svg>
               </a>
             </div>
-            {%endif%}
+           <!-- {%endif%}-->
           </h3>
           <div class="room__box scroll">
             <div class="room__header scroll">
