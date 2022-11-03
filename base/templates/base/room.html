@@ -5,9 +5,8 @@
       <div class="container">
          
         <!-- Room Start -->
-        <div class="room">
+        <div class="room"> 
           <h3 class="room__top">
-            {%if room.host == request.user%} 
             <div class="room__topLeft">
               <a href="{% url 'home' %}">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -19,6 +18,7 @@
               </a>
               <h3>Study Room</h3>
             </div>
+            {%if room.host == request.user%}
             <div class="room__topRight">
               <a href="{% url 'update_form' room.id%}">
                 <svg
