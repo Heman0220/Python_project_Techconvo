@@ -103,7 +103,7 @@ def home(request):
         Q(name__icontains=S) |
         Q(description__icontains=S)).order_by('-created')
     topic=topics.objects.all()
-    room_count = data.count()
+    room_count = data.count
     feed=message.objects.filter(room__topic__names__icontains=S).order_by('-created')
     context={
         'data':data,
