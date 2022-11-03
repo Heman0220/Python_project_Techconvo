@@ -97,20 +97,20 @@ def edit_user(request):
         
 def home(request):
     S = request.GET.get('S')   if request.GET.get('S') != None else ''
-    all_count=classroom.objects.all().count
+   # all_count=classroom.objects.all().count
     data=classroom.objects.filter(
         Q(topic__names__icontains=S) |
         Q(name__icontains=S) |
         Q(description__icontains=S)).order_by('-created')
     topic=topics.objects.all()
-    room_count = data.count
+   # room_count = data.count
     feed=message.objects.filter(room__topic__names__icontains=S).order_by('-created')
     context={
         'data':data,
         'topic':topic,
-        'room_count':room_count,
+       # 'room_count':room_count,
         'feed':feed,
-        'all_count':all_count,
+       # 'all_count':all_count,
         }
     return render(request,'base/home.html',context)
 
