@@ -1,6 +1,5 @@
 from email.policy import default
 from statistics import mode
-from tkinter import CASCADE
 from django.db import models
 from django.forms import CharField
 from matplotlib.pyplot import cla
