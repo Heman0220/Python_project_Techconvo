@@ -5,7 +5,8 @@
       <div class="container">
          
         <!-- Room Start -->
-        <div class="room"> 
+        
+        <div class="room">
           <h3 class="room__top">
             <div class="room__topLeft">
               <a href="{% url 'home' %}">
@@ -18,7 +19,6 @@
               </a>
               <h3>Study Room</h3>
             </div>
-<!-- {%if room.host == request.user%} -->
             <div class="room__topRight">
               <a href="{% url 'update_form' room.id%}">
                 <svg
@@ -54,7 +54,6 @@
                 </svg>
               </a>
             </div>
-           <!-- {%endif%}-->
           </h3>
           <div class="room__box scroll">
             <div class="room__header scroll">
@@ -91,7 +90,7 @@
                       </a>
                       <span class="thread__date">{{i.created | timesince}}</span>
                     </div>
-                  <!--{%if i.user == request.user%}--> 
+        
                    <a href="{% url 'delete_message' i.id %}">
                     <div class="thread__delete">
                       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -102,7 +101,7 @@
                       </svg>
                     </div>
                   </div></a>
-                  <!--{%endif%}-->
+                
                 </div>
                 <div class="thread__details">
                    {{i.body}}
@@ -110,6 +109,7 @@
                  {%endfor%} 
               </div>
             </div>
+          
           <div class="room__message">
             <form method="POST" action="">
               {%csrf_token%}
@@ -118,6 +118,7 @@
           </div>
          </div>
         </div>
+        
         <!-- Room End -->
 
         <!--   Start -->
