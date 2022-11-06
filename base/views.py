@@ -195,7 +195,8 @@ def update_form(request,pk):
 def delete_form(request,pk):
     room=classroom.objects.get(id=pk)
 
-    
+    if request.user != room.host:
+        return redirect('/')
 
     if request.method == 'POST':
        room.delete()
