@@ -191,7 +191,7 @@ def update_form(request,pk):
         return redirect('/')
     return render(request,'base/room_form.html',context)
 
-@login_required(login_url='/loginpage')
+# -@login_required(login_url='/loginpage')
 def delete_form(request,pk):
     room=classroom.objects.get(id=pk)
 
