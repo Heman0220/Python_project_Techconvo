@@ -1,0 +1,96 @@
+.home {
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.home__profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+}
+.home__profile > img {
+  max-height: 40vh;
+  min-height: 33vh;
+  max-width: 25vh;
+  min-width: 20vh;
+  object-fit: cover;
+  vertical-align: bottom;
+
+  /* max-width: 12.5%; */
+  border: 1px solid #e32b39;
+}
+.home__profiledata {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5%;
+  border: 1px solid #e32b39;
+  flex: 1;
+  padding-left: 2.5%;
+  justify-content: center;
+  min-height: 33vh;
+}
+.home__profiledata > p {
+  padding-top: 1%;
+}
+.home__assets {
+  margin-bottom: 3%;
+}
+.home__assets > h2,
+.home__skillset > h2 {
+  font-weight: 500;
+  color: #e32b39;
+  margin-bottom: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 120%;
+}
+.modal__div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  /* align-items: center; */
+}
+.modal__div > input, .modal__select {
+  margin: 10px;
+  width: 85%;
+  padding: 15px 20px;
+  border: none;
+  outline-width: 0;
+  border-radius: 20px;
+  background-color: #e7e7e7;
+}
+.modal__dropdown{
+  margin: 10px;
+  width: 94%;
+  padding: 15px 20px;
+  border: none;
+  outline-width: 0;
+  border-radius: 20px;
+  background-color: #e7e7e7;
+}
+option{
+  font-size: 15px;
+}
+.modal__div > button {
+  cursor: pointer;
+}
+.modal__header {
+  width: 100%;
+  background-color: #e32b39;
+  display: flex;
+  align-items: center;
+}
+.modal__header > h2 {
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  flex: 0.9;
+}
+.modal__close {
+  flex: 0.1;
+  color: white !important;
+  cursor: pointer;
+}
