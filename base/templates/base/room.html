@@ -5,7 +5,7 @@
       <div class="container">
          
         <!-- Room Start -->
-        {%if room.host == request.user%}
+        
         <div class="room">
           <h3 class="room__top">
             <div class="room__topLeft">
@@ -20,6 +20,7 @@
               <h3>Study Room</h3>
             </div>
             <div class="room__topRight">
+              {%if room.host == request.user%}
               <a href="{% url 'update_form' room.id%}">
                 <svg
                   enable-background="new 0 0 24 24"
@@ -53,6 +54,7 @@
                   ></path>
                 </svg>
               </a>
+              {%endif%}
             </div>
           </h3>
           <div class="room__box scroll">
@@ -61,13 +63,13 @@
                 <h3>{{room.name}}</h3>
                 <span>{{room.created | timesince}}</span>
               </div>
-              <div class="room__hosted">
+              <div class="room__hosted">  
                 <p>Hosted By</p>
                 <a href="#" class="room__author">
                   <div class="avatar avatar--small">
                     <img src="{% static 'images/profile.jpg'%}" />
                   </div>
-                  <span>@{{user.username}}</span>
+                  <span>@{{room.host.username}}</span>
                 </a>
               </div>
               <div class="room__details">
@@ -90,8 +92,9 @@
                       </a>
                       <span class="thread__date">{{i.created | timesince}}</span>
                     </div>
-                   {%if i.user == request.user%}
+        
                    <a href="{% url 'delete_message' i.id %}">
+                    {%if room.host == request.user%}
                     <div class="thread__delete">
                       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                         <title>remove</title>
@@ -100,8 +103,9 @@
                         ></path>
                       </svg>
                     </div>
+                    {%endif%}
                   </div></a>
-                  {%endif%}
+                
                 </div>
                 <div class="thread__details">
                    {{i.body}}
@@ -109,6 +113,7 @@
                  {%endfor%} 
               </div>
             </div>
+          
           <div class="room__message">
             <form method="POST" action="">
               {%csrf_token%}
@@ -117,11 +122,11 @@
           </div>
          </div>
         </div>
-        {%endif%}
+        
         <!-- Room End -->
 
         <!--   Start -->
-        <div class="room">
+        <div class="participants">
           <h3 class="participants__top">Participants <span>({{participant.count}} Joined)</span></h3>
           <div class="participants__list scroll">
             {%for i in participant%}
