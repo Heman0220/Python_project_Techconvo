@@ -5,15 +5,17 @@ from rest_framework.response import Response
 from base.models import classroom,message
 from .serializers import RoomSerializer,MessageSerializer
 
-@api_view(['GET'])
+@api_view(['GET','POST'])
 def getRoutes(request):
     routes=[
         'GET /api',
         'GET /api/rooms',
         'GET /api/rooms/:id',
         'GET /api/messages'
+        'POST /api/room'
     ]
     return Response(routes)
+@api_view(['POST'])
 
 
 @api_view(['GET'])

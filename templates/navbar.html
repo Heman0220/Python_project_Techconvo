@@ -2,7 +2,7 @@
 <header class="header header--loggedIn">
     <div class="container">
       <a href="{% url 'home' %}" class="header__logo">
-        <img src="https://previews.123rf.com/images/jacekkita/jacekkita1511/jacekkita151100403/48523557-logo-e-learning.jpg" />
+        <img src="{% static 'images/techconvo-low-resolution-color-logo.png'%}" />
         <h1>TechConvo</h1>
       </a>
       <form class="header__search" method="GET" action="{%url 'home'%}">
