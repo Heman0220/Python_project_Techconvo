@@ -10,6 +10,8 @@ from .models import message
 from .forms import room_form,user_form
 from django.db.models import Q
 # Create your views here.
+
+# updated for merge
 """  
  if request.method=='GET':
         delete=message.objects.POST.get('body')
