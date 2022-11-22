@@ -20,6 +20,7 @@
               <h3>Study Room</h3>
             </div>
             <div class="room__topRight">
+              {%if room.host == request.user%}
               <a href="{% url 'update_form' room.id%}">
                 <svg
                   enable-background="new 0 0 24 24"
@@ -53,6 +54,7 @@
                   ></path>
                 </svg>
               </a>
+              {%endif%}
             </div>
           </h3>
           <div class="room__box scroll">
@@ -61,7 +63,7 @@
                 <h3>{{room.name}}</h3>
                 <span>{{room.created | timesince}}</span>
               </div>
-              <div class="room__hosted">
+              <div class="room__hosted">  
                 <p>Hosted By</p>
                 <a href="#" class="room__author">
                   <div class="avatar avatar--small">
@@ -92,6 +94,7 @@
                     </div>
         
                    <a href="{% url 'delete_message' i.id %}">
+                    {%if room.host == request.user%}
                     <div class="thread__delete">
                       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                         <title>remove</title>
@@ -100,6 +103,7 @@
                         ></path>
                       </svg>
                     </div>
+                    {%endif%}
                   </div></a>
                 
                 </div>
@@ -140,8 +144,9 @@
         </div>
         <!--  End -->
 
-
       </div>
     </main>
 
-{%endblock content%}   
+{%endblock content%} 
+
+<!--ends-->
